@@ -1,0 +1,54 @@
+{
+  "name": "folhacerta-carimbo-tempo",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ArchanjoJr/apiNode.git"
+  },
+  "version": "1.0.2",
+  "description": "Servico do folha certa de carimbo de tempo",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "mocha --exit"
+  },
+  "author": "Matheus",
+  "license": "ISC",
+  "dependencies": {
+    "app-root-path": "^2.0.1",
+    "aws-sdk": "^2.576.0",
+    "axios": "^0.19.0",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.2",
+    "cli-table": "^0.3.1",
+    "cors": "^2.8.4",
+    "crypto": "^1.0.1",
+    "eslint": "^4.19.1",
+    "eslint-plugin-jest": "^21.17.0",
+    "express": "^4.16.2",
+    "file-type": "^12.4.0",
+    "get-routes": "^2.0.0",
+    "https": "^1.0.0",
+    "joi": "^14.3.1",
+    "joi-i18n": "^13.1.3",
+    "jwt-simple": "^0.5.1",
+    "md5": "^2.2.1",
+    "moment": "^2.20.1",
+    "moment-timezone": "^0.5.27",
+    "mongoose": "^5.0.5",
+    "mysql": "^2.15.0",
+    "nodemon": "^1.14.12",
+    "pdfkit": "^0.8.3",
+    "underscore": "^1.9.1",
+    "uuid": "^3.3.3",
+    "winston": "^2.4.2"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-mocha": "^5.0.0",
+    "iniparser": "^1.0.5",
+    "mocha": "^5.2.0"
+  }
+}
