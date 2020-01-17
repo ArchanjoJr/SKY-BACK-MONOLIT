@@ -1,7 +1,6 @@
-const { getBucketName, getActCredentials } = require('./AwsCredentials');
+const {HTTP_STATUS} = require('./Constants');
 
 module.exports = {
   API_PORT: process.env.PORT || 3000,
-  getBucketName,
-  getActCredentials,
+  HTTP_STATUS,
 };

@@ -1,10 +1,10 @@
 const { errorResponse, genericResponse } = require('./ApiResponse');
-const { schemaValidator } = require('./schemaValidator');
+const SchemaValidator = require('./SchemaValidator');
 const ApiError = require('./ApiError');
 
 module.exports = {
   errorResponse,
   genericResponse,
-  schemaValidator,
+  SchemaValidator,
   ApiError,
 };

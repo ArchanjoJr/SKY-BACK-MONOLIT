@@ -23,12 +23,12 @@ module.exports = {
     }
   ],
     "rules":{
-        "no-console":0,
         'prefer-promise-reject-errors':0,
         'max-len':["error", {"code": 200,"comments":200}],
         'consistent-return':0,
         'no-restricted-syntax':0,
         'camelcase':0,
+        'linebreak-style':0,
     },
     
 };

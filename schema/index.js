@@ -1,5 +1,7 @@
-const { marcarPontoSchema } = require('./marcarPonto');
+const SignInSchema = require('./signInSchema');
+const SignUpSchema = require('./signUpSchema');
 
 module.exports = {
-  marcarPontoSchema,
+  SignInSchema,
+  SignUpSchema,
 };
