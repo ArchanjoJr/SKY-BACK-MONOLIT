@@ -1,4 +1,7 @@
 module.exports = Object.freeze({
+  MONGO_URL: 'mongodb://sky:senhasky1@ds012889.mlab.com:12889/sky',
+  TIMEZONE: 'America/Sao_Paulo',
+  SECRET_TOKEN: 'SKY_SECRET_TOKEN',
   HTTP_STATUS: {
     CONTINUE: 100,
     SWITCHING_PROTOCOLS: 101,

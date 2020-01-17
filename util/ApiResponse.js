@@ -6,7 +6,7 @@
 * @returns retorna a response para a API
 */
 const genericResponse = (status, message, response) => {
-  console.dir({ status, message }, { depth: null, colors: true });
+  // console.dir({ status, message }, { depth: null, colors: true });
   return response.status(status).json(message);
 };
 
