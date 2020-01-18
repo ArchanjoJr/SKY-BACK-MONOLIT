@@ -1,3 +1,5 @@
+const { hashSync } = require('bcryptjs');
+
 const { genericResponse, errorResponse, SchemaValidator } = require('../../util');
 const { SignUpSchema } = require('../../schema');
 const { HTTP_STATUS } = require('../../configuration');
@@ -20,7 +22,7 @@ const signUp = async (request, response) => {
     const user = new User({
       nome,
       email,
-      senha,
+      senha: hashSync(senha, 10), // create hash of the password
       telefones,
     });
     await user.save();

@@ -7,10 +7,12 @@ const api = require('./routes');
 const { MONGO_URL } = require('./configuration');
 
 const app = express();
-// accepting only JSON and returning only json to api
+
 app.use(bodyParser.urlencoded({ extended: false }));
+
+// accepting only JSON and returning only json to api
 app.use(bodyParser.json({
-  type: () => true,
+  type: '*/json',
 }));
 
 // adding cors to api

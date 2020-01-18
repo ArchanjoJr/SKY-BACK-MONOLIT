@@ -1,4 +1,6 @@
 const { isNull } = require('underscore');
+const { compareSync } = require('bcryptjs');
+
 const { genericResponse, errorResponse, SchemaValidator } = require('../../util');
 const { SignInSchema } = require('../../schema');
 const { HTTP_STATUS } = require('../../configuration');
@@ -17,7 +19,7 @@ const signIn = async (request, response) => {
     } = body;
     const user = await User.findOne({ email });
     if (isNull(user)) throw new ApiError('Usuário e/ou senha inválidos', HTTP_STATUS.NOT_FOUND);
-    if (senha !== user.senha) throw new ApiError('Usuário e/ou senha inválidos', HTTP_STATUS.UNAUTHORIZED);
+    if (!compareSync(senha, user.senha)) throw new ApiError('Usuário e/ou senha inválidos', HTTP_STATUS.UNAUTHORIZED);
     const auth = new AuthServices();
     user.token = await auth.createToken(user.id);
     user.ultimo_login = Date.now();
