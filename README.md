@@ -15,8 +15,10 @@ my-app
 ├── app.js
 ├── index.js => arquivo onde e inicializado a api
 ├── package.json
-├── README.md
-└── yarn.lock
+├── package-lock.lock
+├── Procfile
+└── README.md
+
 ```
 
 # Installing 
