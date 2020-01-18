@@ -23,7 +23,6 @@ module.exports = class SchemaValidator {
 
   validateSchema(body) {
     return new Promise(async (resolve, reject) => {
-      console.dir(body, { depth: null, colors: true });
       const { value, error } = Joi.validate(body, this.SCHEMA, { locale: 'en_US' });
       if (error) {
         return reject(new ApiError(error.details[0].message, HTTP_STATUS.BAD_REQUEST));

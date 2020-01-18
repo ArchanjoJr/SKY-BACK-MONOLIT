@@ -6,7 +6,6 @@
 * @returns retorna a response para a API
 */
 const genericResponse = (status, message, response) => {
-  // console.dir({ status, message }, { depth: null, colors: true });
   return response.status(status).json(message);
 };
 
@@ -18,11 +17,10 @@ const genericResponse = (status, message, response) => {
 * @returns retorna uma response de ERROR para a API
 */
 const errorResponse = (Error, response) => {
-  console.error(Error);
   if (Error.status) {
     return response.status(Error.status).json({ message: Error.message });
   }
-  return response.status(500).json({message: Error.message });
+  return response.status(500).json({ message: Error.message });
 };
 
 module.exports = {

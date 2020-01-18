@@ -1,5 +1,11 @@
+/*eslint-disable*/ 
 const Table = require('cli-table');
 
+/**
+* @description funcao que cria uma tabela com todos os endpoints da api
+* @param {string} baseUrl - BASEURL DA API
+* @param {object} routes  - objeto routes do express
+*/
 const printRoutes = (baseUrl, routes) => {
   const table = new Table({ head: ['Path', 'Method'] });
   console.log(`\nAPI for ${baseUrl}`);

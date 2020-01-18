@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
-
+// USER MODEL FOR THE DOCUMENT SAVED ON MONGODB
 const userSchema = new Schema({
   nome: String,
   email: { type: String, unique: true },

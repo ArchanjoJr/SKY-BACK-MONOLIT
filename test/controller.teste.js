@@ -1,10 +1,11 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 
-const {HTTP_STATUS} = require('../configuration');
+const { HTTP_STATUS } = require('../configuration');
 const server = require('../index');
+
 chai.use(chaiHttp);
-const {expect} = chai;
+const { expect } = chai;
 describe('OAUTH TEST', () => {
   it('TESTE SINGUP EMPTY CONSTROLLER', (done) => {
     chai.request(server)
@@ -19,18 +20,18 @@ describe('OAUTH TEST', () => {
     chai.request(server)
       .post('/api/v1/users/signup')
       .send({
-        "email": "email@teste.com",
-        "senha": "teste123",
-        "telefones": [
+        email: 'email@teste.com',
+        senha: 'teste123',
+        telefones: [
           {
-            "numero": "981910691",
-            "ddd": "12"
+            numero: '981910691',
+            ddd: '12',
           },
           {
-            "numero": "123456789",
-            "ddd": "11"
+            numero: '123456789',
+            ddd: '11',
           },
-        ]
+        ],
       })
       .end((err, response) => {
         if (err) done(err);
@@ -42,18 +43,18 @@ describe('OAUTH TEST', () => {
     chai.request(server)
       .post('/api/v1/users/signup')
       .send({
-        "nome": "matheus",
-        "senha": "matheus123",
-        "telefones": [
+        nome: 'matheus',
+        senha: 'matheus123',
+        telefones: [
           {
-            "numero": "981910691",
-            "ddd": "12"
+            numero: '981910691',
+            ddd: '12',
           },
           {
-            "numero": "123456789",
-            "ddd": "11"
+            numero: '123456789',
+            ddd: '11',
           },
-        ]
+        ],
       })
       .end((err, response) => {
         if (err) done(err);
@@ -65,18 +66,18 @@ describe('OAUTH TEST', () => {
     chai.request(server)
       .post('/api/v1/users/signup')
       .send({
-        "nome": "matheus",
-        "senha": "matheus123",
-        "telefones": [
+        nome: 'matheus',
+        senha: 'matheus123',
+        telefones: [
           {
-            "numero": "981910691",
-            "ddd": "12"
+            numero: '981910691',
+            ddd: '12',
           },
           {
-            "numero": "123456789",
-            "ddd": "11"
+            numero: '123456789',
+            ddd: '11',
           },
-        ]
+        ],
       })
       .end((err, response) => {
         if (err) done(err);
@@ -88,9 +89,9 @@ describe('OAUTH TEST', () => {
     chai.request(server)
       .post('/api/v1/users/signup')
       .send({
-        "nome": "matheus",
-        "senha": "matheus123",
-        "telefones": []
+        nome: 'matheus',
+        senha: 'matheus123',
+        telefones: [],
       })
       .end((err, response) => {
         if (err) done(err);
@@ -102,9 +103,9 @@ describe('OAUTH TEST', () => {
     chai.request(server)
       .post('/api/v1/users/signup')
       .send({
-        "nome": "teste",
-        "email": "email@teste.com",
-        "senha": "teste123"
+        nome: 'teste',
+        email: 'email@teste.com',
+        senha: 'teste123',
       })
       .end((err, response) => {
         if (err) done(err);
@@ -112,26 +113,27 @@ describe('OAUTH TEST', () => {
       });
     return done();
   });
-  it('TESTE SINGUP TRUE', (done) => {
+  it('TESTE SINGUP', (done) => {
     chai.request(server)
       .post('/api/v1/users/signup')
       .send({
-        "nome": "teste",
-        "email": "email@teste.com",
-        "senha": "teste123",
-        "telefones": [
+        nome: 'teste',
+        email: 'email@teste.com',
+        senha: 'teste123',
+        telefones: [
           {
-            "numero": "981910691",
-            "ddd": "12"
+            numero: '981910691',
+            ddd: '12',
           },
           {
-            "numero": "123456789",
-            "ddd": "11"
+            numero: '123456789',
+            ddd: '11',
           },
         ],
       })
       .end((err, response) => {
         if (err) done(err);
+        expect(err).to.be(null);
         expect(response).to.have.status(HTTP_STATUS.CREATED);
       });
     return done();
@@ -140,7 +142,7 @@ describe('OAUTH TEST', () => {
     chai.request(server)
       .post('/api/v1/users/signin')
       .send({
-        "senha": "teste123"
+        senha: 'teste123',
       })
       .end((err, response) => {
         if (err) done(err);
@@ -152,7 +154,7 @@ describe('OAUTH TEST', () => {
     chai.request(server)
       .post('/api/v1/users/signin')
       .send({
-        "email": "email@teste.com",
+        email: 'email@teste.com',
       })
       .end((err, response) => {
         if (err) done(err);
@@ -164,22 +166,21 @@ describe('OAUTH TEST', () => {
     chai.request(server)
       .post('/api/v1/users/signin')
       .send({
-        "email": "email@teste.com",
-        "senha": "teste123"
+        email: 'email@teste.com',
+        senha: 'teste123',
       })
       .end((err, response) => {
         if (err) done(err);
-        console.log(':::::::::::::::::::::::::::::::::::::', response);
         expect(response).to.have.status(HTTP_STATUS.OK);
       });
     return done();
   });
-  it('TESTE SIGNIN TRUE', (done) => {
+  it('TESTE SIGNIN', (done) => {
     chai.request(server)
       .post('/api/v1/users/signin')
       .send({
-        "email": "email@teste.com",
-        "senha": "teste123",
+        email: 'email@teste.com',
+        senha: 'teste123',
       })
       .end((err, response) => {
         if (err) done(err);
@@ -191,30 +192,19 @@ describe('OAUTH TEST', () => {
     chai.request(server)
       .post('/api/v1/users/signin')
       .send({
-        "email": "email@teste.com",
-        "senha": "teste123",
+        email: 'email@teste.com',
+        senha: 'teste123',
       })
       .end((err, response) => {
         if (err) done(err);
-        console.log(response);
-        expect(response).to.have.status(HTTP_STATUS.OK);
-
+        chai.request(`/api/v1/users/${response.body.id}`)
+          .set('Authorization', `Bearer ${response.body.token}`)
+          .end((error, resp) => {
+            if (error) done(error);
+            expect(resp).to.have.status(HTTP_STATUS.OK);
+            expect(err).to.be(null);
+          });
       });
     return done();
   });
 });
-// {
-//   "nome": "matheus",
-//   "email": "archanjojr12@my.com",
-//   "senha": "matheus123",
-//   "telefones": [
-//   {
-//     "numero": "981910691",
-//     "ddd": "12"
-//   },
-//   {
-//     "numero": "123456789",
-//     "ddd": "11"
-//   }
-// ]
-// }

@@ -1,4 +1,6 @@
-const buildUserResponse = (user) => new Promise((resolve, reject) => {
+// FUNCTION THA THAT BUILD THE RESPONSE FROM THE DATA COMING FROM MONGODB
+
+const buildUserResponse = user => new Promise((resolve, reject) => {
   try {
     const {
       _id: id,
@@ -16,7 +18,7 @@ const buildUserResponse = (user) => new Promise((resolve, reject) => {
       nome,
       email,
       senha,
-      telefones: telefones.map((obj) => { return { numero: obj.numero, ddd: obj.ddd } }),
+      telefones: telefones.map(obj => ({ numero: obj.numero, ddd: obj.ddd })),
       data_criacao,
       data_atualizacao,
       ultimo_login,
@@ -26,6 +28,7 @@ const buildUserResponse = (user) => new Promise((resolve, reject) => {
     return reject(error);
   }
 });
+
 module.exports = {
-  buildUserResponse
+  buildUserResponse,
 };

@@ -8,6 +8,12 @@ module.exports = class Auth {
   constructor() {
     this.SECRET_TOKEN = SECRET_TOKEN;
   }
+
+  /**
+  * @description funcao que cria um token
+  * @param {string} user_id   - user_id do usuario logando
+  * @returns jwt token
+  */
   createToken(user_id) {
     return new Promise((resolve, reject) => {
       try {
@@ -22,6 +28,12 @@ module.exports = class Auth {
       }
     });
   }
+
+  /**
+  * @description funcao que decriptografa um token jwt
+  * @param {string} token   - token jwt
+  * @returns retorna o payload do token jwt
+  */
   decodeToken(token) {
     return new Promise((resolve, reject) => {
       try {

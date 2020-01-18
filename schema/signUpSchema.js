@@ -4,7 +4,7 @@ const telefoneSchema = joi.object().keys({
   numero: joi.number().required(),
   ddd: joi.number().min(0b0).max(99),
 });
-
+// SCHEMA OBJECT FOR THE REQUST BODY FOR THE SIGNUP
 const signUpSchema = joi.object().keys({
   nome: joi.string().required(),
   email: joi.string().email({ minDomainSegments: 2 }).required(),

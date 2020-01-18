@@ -11,6 +11,9 @@
     "start": "nodemon index.js",
     "test": "mocha --exit"
   },
+  "engines": {
+    "node": "10.x"
+  },
   "author": "Matheus",
   "license": "ISC",
   "dependencies": {
